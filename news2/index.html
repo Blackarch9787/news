@@ -58,12 +58,12 @@
 
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
+        // Import the firebase library
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { getDatabase, ref,set, child, get} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-
+        //firebase api key
         const firebaseConfig = {
             apiKey: "AIzaSyDH91jgSKu8tZ2ejyAHwfdTgC5TcqJ4S_k",
             authDomain: "tutinews9787.firebaseapp.com",
@@ -75,18 +75,60 @@
             measurementId: "G-XWL9RWC9LN"
         };
 
-        // Initialize Firebase
+        // Initialize Firebase variable
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getDatabase(app);
+        const dbref=ref(db,'news/')
         console.log(app);
-
-
-
-
-
-
+        console.log(dbref);
         
+ 
+        //initialize news content variable
+        const form = document.getElementById('uploadForm');
+        const title = document.getElementById('title').value;
+        const subject = document.getElementById('subject').value;
+        const content = document.getElementById('content').value;
+
+        //Writing data on database
+        function uploadNews(title, subject, content){
+            set(ref(db, 'news/' + title), {
+                Title: title,
+                Subject: subject,
+                Content: content
+     
+
+            });
+        }
+        uploadNews("Earth quick sample news","Earth quick on nepal","The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. When you build cross-platform apps with our Android, Apple platforms, and JavaScript SDKs, all of your clients share one Realtime Database instance and automatically receive updates with the newest data.");
+        //submit button onclick event upload news
+        form.onsubmit=()=>{
+            const title = document.getElementById('title').value;
+            const subject = document.getElementById('subject').value;
+            const content = document.getElementById('content').value;
+            uploadNews(title,subject,content)
+        }
+
+        //Reading data on database
+        get(dbref).then((snapshot) => {
+            if (snapshot.exists()) {
+            console.log(snapshot.val());
+        }
+        else {
+            console.log("No data available");
+        }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+
+
+
+
+   
+        
+
+        // unwanted website update
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('uploadForm');
     const topNewsSection = document.getElementById('top-news');
