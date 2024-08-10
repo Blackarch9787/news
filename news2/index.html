@@ -110,19 +110,37 @@
         }
 
         //Reading data on database
-        // Read data from the news node
-get(ref(db, 'news')).then((snapshot) => {
-  snapshot.forEach((childSnapshot) => {
-    const title = childSnapshot.key;
-    const data = childSnapshot.val();
-    console.log("snapshot val:",snapshot.val());
-    console.log("childsnapshot val:",childSnapshot.val());
-    console.log("childsnap key:",childSnapshot.key)
-    console.log(`Title: ${title}`);
-    console.log(`Subject: ${data.Subject}`);
-    console.log(`Content: ${data.Content}`);
-  });
-});
+        
+        get(ref(db, 'news')).then((snapshot) => {
+            if (snapshot.exists()) {
+                snapshot.forEach((childSnapshot) => {
+                    const title = childSnapshot.key;
+                    const data = childSnapshot.val();
+                    const section=document.getElementById("top-news");
+                    console.log("snapshot val:",snapshot.val());
+                    console.log("childsnapshot val:",childSnapshot.val());
+                    console.log("childsnap key:",childSnapshot.key)
+                    console.log(`Title: ${title}`);
+                    console.log(`Subject: ${data.Subject}`);
+                    console.log(`Content: ${data.Content}`);
+                    //create artical
+                    const article = document.createElement('article');
+                    article.innerHTML = `
+                    <h2>${title}</h2>
+                    <p>${data.Subject}</p>
+                    <p>${data.Content}</p>
+                    `;
+                    //document.body.
+                    section.appendChild(article);
+                
+                });
+            }else {
+            console.log("No data available");
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
 
       /*  get(dbref).then((snapshot) => {
             if (snapshot.exists()) {
@@ -143,13 +161,6 @@ get(ref(db, 'news')).then((snapshot) => {
         }).catch((error) => {
             console.error(error);
         });
-
-
-
-*/
-
-   
-        
 
         // unwanted website update
 document.addEventListener('DOMContentLoaded', () => {
@@ -186,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reader.readAsDataURL(imageFile);
     });
 });
+*/
 
 
   
