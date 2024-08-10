@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('uploadForm');
     const topNewsSection = document.getElementById('top-news');
@@ -32,3 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         reader.readAsDataURL(imageFile);
     });
 });
+
+
