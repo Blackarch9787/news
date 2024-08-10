@@ -89,10 +89,10 @@
         const title = document.getElementById('title').value;
         const subject = document.getElementById('subject').value;
         const content = document.getElementById('content').value;
-
         //Writing data on database
-        function uploadNews(title, subject, content){
-            set(ref(db, 'news/' + title), {
+        function uploadNews(datetime,title, subject, content){
+            set(ref(db, 'news/' + datetime), {
+                Datetime:datetime,
                 Title: title,
                 Subject: subject,
                 Content: content
@@ -100,13 +100,17 @@
 
             });
         }
-        uploadNews("Earth quick sample news","Earth quick on nepal","The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. When you build cross-platform apps with our Android, Apple platforms, and JavaScript SDKs, all of your clients share one Realtime Database instance and automatically receive updates with the newest data.");
         //submit button onclick event upload news
         form.onsubmit=()=>{
             const title = document.getElementById('title').value;
             const subject = document.getElementById('subject').value;
             const content = document.getElementById('content').value;
-            uploadNews(title,subject,content)
+            //get date and time
+            var currentdate = new Date();
+            var datetime = currentdate.getDay() + "-" + currentdate.getMonth() + "-" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+  
+            uploadNews(datetime,title,subject,content)
         }
 
         //Reading data on database
@@ -114,20 +118,20 @@
         get(ref(db, 'news')).then((snapshot) => {
             if (snapshot.exists()) {
                 snapshot.forEach((childSnapshot) => {
-                    const title = childSnapshot.key;
+                    const datetime = childSnapshot.key;
                     const data = childSnapshot.val();
                     const section=document.getElementById("top-news");
                     console.log("snapshot val:",snapshot.val());
                     console.log("childsnapshot val:",childSnapshot.val());
                     console.log("childsnap key:",childSnapshot.key)
-                    console.log(`Title: ${title}`);
+                    console.log(`Title: ${data.Title}`);
                     console.log(`Subject: ${data.Subject}`);
                     console.log(`Content: ${data.Content}`);
                     //create artical
                     const article = document.createElement('article');
                     article.innerHTML = `
-                    <h2>${title}</h2>
-                    <p>${data.Subject}</p>
+                    <h3 class="newstitle">${data.Title}</h3>
+                    <p class="newssubject">${data.Subject}</p>
                     <p>${data.Content}</p>
                     `;
                     //document.body.

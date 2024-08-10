@@ -108,3 +108,14 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+.newstitle{
+    color: #047ff1;
+    font-size: x-large;
+    
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+}
+.newssubject{
+    font-weight: 600;
+}
