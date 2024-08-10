@@ -41,7 +41,7 @@
                 <textarea id="content" name="content" required></textarea>
 
                 <label for="image">Upload Image:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
+                <input type="file" id="image" name="image" accept="image/*">
 
                 <button type="submit">Submit</button>
             </form>
@@ -110,9 +110,32 @@
         }
 
         //Reading data on database
-        get(dbref).then((snapshot) => {
+        // Read data from the news node
+get(ref(db, 'news')).then((snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    const title = childSnapshot.key;
+    const data = childSnapshot.val();
+    console.log("snapshot val:",snapshot.val());
+    console.log("childsnapshot val:",childSnapshot.val());
+    console.log("childsnap key:",childSnapshot.key)
+    console.log(`Title: ${title}`);
+    console.log(`Subject: ${data.Subject}`);
+    console.log(`Content: ${data.Content}`);
+  });
+});
+
+      /*  get(dbref).then((snapshot) => {
             if (snapshot.exists()) {
-            console.log(snapshot.val());
+                var data=snapshot.val();
+                var title1=data.Title;
+                var subject1=data.Subject;
+                var content1=data.Content;
+                console.log(data);
+                console.log(title1);
+               // document.getElementById('title').value=title;
+               // document.getElementById('subject').value=subject;
+               // document.getElementById('content').value=content;
+            
         }
         else {
             console.log("No data available");
@@ -123,7 +146,7 @@
 
 
 
-
+*/
 
    
         
