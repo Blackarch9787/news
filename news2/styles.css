@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #faf0f0;
     color: #333;
 }
 
@@ -85,10 +85,13 @@ form button:hover {
 }
 
 article {
-    background-color: #fff;
+    /*background-color: #f7f7f7;*/
+    background-color: #dddada;
     padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    height: 150px;
+    overflow: scroll;
 }
 
 article h3 {
@@ -118,4 +121,7 @@ footer {
 }
 .newssubject{
     font-weight: 600;
+}
+small{
+    color: white;
 }

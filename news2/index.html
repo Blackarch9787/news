@@ -14,9 +14,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#world">World</a></li>
-                <li><a href="#tech">Tech</a></li>
-                <li><a href="#sports">Sports</a></li>
+                <li><a href="https://www.instagram.com/masstalkies.mt/">Instagram</a></li>
+                <li><a href="#youtube">Youtube</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -91,7 +91,7 @@
         const content = document.getElementById('content').value;
         //Writing data on database
         function uploadNews(datetime,title, subject, content){
-            set(ref(db, 'news/' + datetime), {
+            set(ref(db, 'news/' + title), {
                 Datetime:datetime,
                 Title: title,
                 Subject: subject,
@@ -107,7 +107,8 @@
             const content = document.getElementById('content').value;
             //get date and time
             var currentdate = new Date();
-            var datetime = currentdate.getDay() + "-" + currentdate.getMonth() + "-" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            //var datetime = currentdate.getDay() + "-" + currentdate.getMonth() + "-" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() ;
+            var datetime=new Date().toLocaleTimeString([], {day:"2-digit",month:"2-digit",year:"numeric",hour: '2-digit', minute: "2-digit"});
 
   
             uploadNews(datetime,title,subject,content)
@@ -130,6 +131,7 @@
                     //create artical
                     const article = document.createElement('article');
                     article.innerHTML = `
+                    <small>${data.Datetime}</small>
                     <h3 class="newstitle">${data.Title}</h3>
                     <p class="newssubject">${data.Subject}</p>
                     <p>${data.Content}</p>
@@ -206,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
     </script>
+    
 
 
 
