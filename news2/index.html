@@ -11,13 +11,13 @@
         <h1 class="title"><marquee><span class="highlight">Masstalkies-(2024) </span>- News Portal.Com</marquee></h1>
         
         
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="https://www.instagram.com/masstalkies.mt/">Instagram</a></li>
-                <li><a href="#youtube">Youtube</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="https://www.instagram.com/masstalkies.mt/">Instagram</a></li>
+                <li class="nav-item"><a href="#youtube">Youtube</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><button class="logbut">Login</button></li>
             </ul>
         </nav>
     </header>
@@ -27,7 +27,7 @@
             <h2>Top News</h2>
             <!-- News articles will be dynamically added here -->
         </section>
-
+    <!--
         <section id="upload-news">
             <h2>Upload Your News</h2>
             <form id="uploadForm">
@@ -46,16 +46,12 @@
                 <button type="submit">Submit</button>
             </form>
         </section>
+    -->
     </main>
 
     <footer>
         <p><span class="highlight">&copy; 2024 News Portal.</span> All rights reserved.</p>
     </footer>
-
-    
-   
-
-
 
     <script type="module">
         // Import the firebase library
@@ -84,7 +80,7 @@
         console.log(dbref);
         
  
-        //initialize news content variable
+       /* //initialize news content variable
         const form = document.getElementById('uploadForm');
         const title = document.getElementById('title').value;
         const subject = document.getElementById('subject').value;
@@ -113,6 +109,7 @@
   
             uploadNews(datetime,title,subject,content)
         }
+        */
 
         //Reading data on database
         
@@ -147,27 +144,9 @@
         .catch((error) => {
             console.error(error);
         });
-        /*fffbFbfbfb*/
+        
 
-      /*  get(dbref).then((snapshot) => {
-            if (snapshot.exists()) {
-                var data=snapshot.val();
-                var title1=data.Title;
-                var subject1=data.Subject;
-                var content1=data.Content;
-                console.log(data);
-                console.log(title1);
-               // document.getElementById('title').value=title;
-               // document.getElementById('subject').value=subject;
-               // document.getElementById('content').value=content;
-            
-        }
-        else {
-            console.log("No data available");
-        }
-        }).catch((error) => {
-            console.error(error);
-        });
+      /*
 
         // unwanted website update
 document.addEventListener('DOMContentLoaded', () => {

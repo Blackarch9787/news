@@ -21,11 +21,18 @@ header h1 {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     margin: 0;
+    background-color: #333;
+    
 }
+header {
+    position: sticky;
+    top: 0;
+  }
 
 nav ul li {
     margin: 0 15px;
@@ -90,8 +97,8 @@ article {
     padding: 15px;
     margin-bottom: 12px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
-    height: 150px;
-    overflow: scroll;
+    /*height: 150px;
+    overflow: scroll;*/
 }
 
 article h3 {
@@ -109,7 +116,9 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 2px 0;
+    position: sticky;
+    bottom: 0;
 }
 
 .newstitle{
