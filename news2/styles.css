@@ -247,7 +247,7 @@ input{
 
 /* login popup settings code start */
 .cover{
-    width: 100%;
+    width: 97%;
     height: 500px;
     display: flex;
     justify-content: center;
@@ -312,7 +312,7 @@ input{
     position: absolute;
     transition: none;
     transform: translateX(400px);
-    width: 95%%;
+    width: 95%;
     padding: 40px;
 }
 .wrapper.active{
