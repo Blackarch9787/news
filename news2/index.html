@@ -21,8 +21,8 @@
             </ul>
         </nav>
     </header>
-
-    <div class="wrapper">
+    <div id="cover" class="cover">
+        <div class="wrapper" >
         <span class="closeIcon"><ion-icon name="close-outline"></ion-icon></span>
         <div class="loginBox">
             <h2>Login</h2>
@@ -82,15 +82,10 @@
         </div>
 
 
-    </div>
+        </div>
+    </div>    
 
-
-
-
-
-
-
-    <main>
+    <main id="main">
         <section id="top-news">
             <h2>Top News</h2>
             <!-- News articles will be dynamically added here -->
@@ -116,10 +111,14 @@
         </section>
     -->
     </main>
+   
+    
 
     <footer>
         <p><span class="highlight">&copy; 2024 News Portal.</span> All rights reserved.</p>
     </footer>
+   
+
 
     <script type="module">
         // Import the firebase library
@@ -160,7 +159,7 @@
       createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
         const user = userCredential.user;
         console.log("created New user account successfully....");
-        window.location.href="index.html";
+        alert("created New user account successfully....");
       })
       .catch((error) => {
         const errorCode = error.code;

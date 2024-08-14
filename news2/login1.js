@@ -6,8 +6,9 @@ const loginlink=document.querySelector(".loginlink");
 const registerlink=document.querySelector(".registerlink");
 //login,register chat base plase wrapper
 const wrapper=document.querySelector(".wrapper");
-
-
+const cover=document.getElementById("cover");
+const main=document.getElementById("main");
+cover.classList.add("hide");
 
 
 //login register popup place
@@ -23,6 +24,9 @@ loginlink.addEventListener('click',()=>{
 });
 //login button onclick show popup window
 btnpopup.addEventListener('click',()=>{
+    cover.classList.add('show');
+    cover.classList.remove('hide');
+    main.classList.add("hide");
     wrapper.classList.add('active-popup');
     
 });
