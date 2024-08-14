@@ -247,7 +247,7 @@ input{
 
 /* login popup settings code start */
 .cover{
-    width: 100%;
+    width: 90%;
     height: 500px;
     display: flex;
     justify-content: center;
@@ -358,83 +358,3 @@ input{
 
 
 
-
-
-
-
-  /* Global styles */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  /* Flexible grid system */
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .wrapper {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .wrapper {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-  }
-
-  /* Login and register boxes */
-  .loginBox, .registerBox {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .loginBox {
-    grid-column: 1 / 2;
-  }
-
-  .registerBox {
-    grid-column: 2 / 3;
-  }
-
-  /* Input boxes */
-  .inputbox {
-    margin-bottom: 20px;
-  }
-
-  .inputbox input[type="email"], .inputbox input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-
-  /* Buttons */
-  .btn {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .btn:hover {
-    background-color: #3e8e41;
-  }
