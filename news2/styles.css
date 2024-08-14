@@ -20,6 +20,7 @@ header h1 {
     margin: 0;
 }
 
+
 nav ul {
     list-style-type: none;
     padding: 10px;
@@ -149,7 +150,7 @@ small{
     font-size: 1.1em;
     color: #fff;
     font-weight: 500;
-    margin-left: 40px;
+    margin-right: 40px;
     transition: .5%;
 }
 .buttonLogin:hover{
@@ -157,6 +158,11 @@ small{
     color: #162938;
 }
 .loginBox h2{
+    font-size: 2em;
+    color:#162918;
+    text-align: center;
+}
+.registerBox h2{
     font-size: 2em;
     color:#162918;
     text-align: center;
@@ -193,6 +199,7 @@ input{
     background: transparent;
     border: none;
     outline: none;
+    margin: 1%;
     font-size: 1em;
     color: #162938;
     font-weight: 600;
@@ -241,14 +248,19 @@ input{
 /* login popup settings code start */
 .cover{
     width: 100%;
-    height: 500px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/back9.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
 }
 .wrapper{
-    position: relative;
-    width: 500px;
+    position: absolute;
+    width: 400px;
     height: 450px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
@@ -282,10 +294,7 @@ input{
     
     transform: scale(1);
 }
-.wrapper .chatbox{
-    transition: transform 1s ease;
-    transform: translateX(1000px);
-}
+
 .wrapper .loginBox{
     position: absolute;
     transition: transform 1s ease;
@@ -293,7 +302,7 @@ input{
 }
 .wrapper.active .loginBox{
     transition: none;
-    transform: translateX(-400px);
+    transform: translateX(-500px);
 }
 .wrapper.active .registerBox{
     transition: transform 1s ease;
@@ -303,6 +312,8 @@ input{
     position: absolute;
     transition: none;
     transform: translateX(400px);
+    width: 100%;
+    padding: 40px;
 }
 .wrapper.active{
     height: 480px;
