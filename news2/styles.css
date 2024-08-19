@@ -371,6 +371,9 @@ input{
     width: 100px;
     height: 95px;
 }
+.text-container{
+    margin: 2px;
+}
 
   @media only screen and (max-width: 600px) {
     /* Your styles here */
