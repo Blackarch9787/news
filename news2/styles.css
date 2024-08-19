@@ -359,6 +359,19 @@ input{
     display: none;
   }
 
+
+  /*news container style*/
+.newscover{
+    display: flex;
+}
+.cont{
+    margin: 2%;
+}
+.newsimg{
+    width: 100px;
+    height: 95px;
+}
+
   @media only screen and (max-width: 600px) {
     /* Your styles here */
     .wrapper{
