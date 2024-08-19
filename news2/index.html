@@ -152,7 +152,6 @@
     signup.addEventListener("click",(e)=>{
       var email=document.getElementById("emailC").value;
       var password=document.getElementById("passwordC").value;
-      var username=document.getElementById("usernameC").value;
       console.log(auth);
      
       createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
@@ -174,7 +173,8 @@
     
       signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
         const user = userCredential.user;
-        console.log("successfully loggedin");
+        console.log("successfully loggedin",user);
+        
         window.location.href="upload.html";
       })
       .catch((error) => {
