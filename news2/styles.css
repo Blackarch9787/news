@@ -365,6 +365,10 @@ input{
     .newstitle{
         width: 90%;
     }
+    body{
+        width: 95%;
+        margin: 0.01%;
+    }
     
         
 
