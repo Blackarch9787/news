@@ -354,15 +354,15 @@ input{
 
     }
     .artical{
-        width: 95%;
+        width: 90%;
     }
-    .newscontent{
-        width:90%
+    .artical.newscontent{
+        width:90%;
     }
-    .newssubject{
-        width:90%
+    .artical.newssubject{
+        width:90%;
     }
-    .newstitle{
+    .artial.newstitle{
         width: 90%;
     }
     body{
