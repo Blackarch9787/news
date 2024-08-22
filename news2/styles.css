@@ -354,7 +354,10 @@ input{
 
     }
     .newscover{
-        width: 99.9%;
+        width: 99%;
+    }
+    main {
+        width:99%;
     }
         
 
