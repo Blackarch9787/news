@@ -1,3 +1,4 @@
+/*Normal Styles ...*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,12 +7,14 @@ body {
     color: #333;
     display: block;
 }
-
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+}
+a{
+    margin-right: 25px;
 }
 .highlight{
     color: orangered;
@@ -19,111 +22,25 @@ header {
 header h1 {
     margin: 0;
 }
-
-
-nav ul {
-    list-style-type: none;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    background-color: #333;
-    
-}
 header {
     position: sticky;
     top: 0;
   }
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    
-    
-}
-a{
-    margin-right: 25px;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    
-}
-a:hover{
+  a:hover{
     color: aqua;
     font: 1em sans-serif;
     font-style: italic;
 }
-
 main {
     padding: 20px;
 }
-
 section {
     margin-bottom: 20px;
 }
-
 section h2 {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
 }
-
-form {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #646363;
-}
-
-article {
-    /*background-color: #f7f7f7;*/
-    background-color: #dddada;
-    padding: 15px;
-    margin-bottom: 12px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
-    /*height: 150px;
-    overflow: scroll;*/
-}
-
-article h3 {
-    margin-top: 0;
-}
-
-article img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-}
-
 footer {
     background-color: #333;
     color: #fff;
@@ -134,17 +51,83 @@ footer {
 }
 .instagram{
     color: #f104d1;
-    font-size: xx-large;
-    
-    
+    font-size: xx-large;  
 }
 .instagram:hover{
     color: #dddada;
     cursor: pointer;
     font-size: xx-large;
-    font-weight: bolder;
+    font-weight: bolder;    
+}
+
+/*navigation panel & form style ...*/
+nav ul {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    background-color: #333;   
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
     
 }
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #646363;
+}
+article {
+    /*background-color: #f7f7f7;*/
+    background-color: #dddada;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    /*height: 150px;
+    overflow: scroll;*/
+}
+article h3 {
+    margin-top: 0;
+}
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/*News Artical title subject and more inner elements style*/
 .newstitle{
     color: #047ff1;
     font-size: x-large;
@@ -158,9 +141,22 @@ footer {
 small{
     color: white;
 }
+ /*news container style*/
+ .newscover{
+    display: flex;
+}
+.cont{
+    margin: 2%;
+}
+.newsimg{
+    width: 100px;
+    height: 95px;
+}
+.text-container{
+    margin: 2px;
+}
 
-
-/*login style*/
+/*loginbox style*/
 .buttonLogin{
     width: 110px;
     height:40px;
@@ -261,12 +257,6 @@ input{
     text-decoration: underline; 
 }
 
-
-
-
-
-
-
 /* login popup settings code start */
 .cover{
     width: 100%;
@@ -316,7 +306,6 @@ input{
     
     transform: scale(1);
 }
-
 .wrapper .loginBox{
     position: absolute;
     transition: transform 1s ease;
@@ -348,62 +337,30 @@ input{
     padding: 40px;
 }
 
-
-
 /* login popup settings code end  */
 .show {
     display: flex;
-  }
-  
-  .hide {
+} 
+.hide {
     display: none;
-  }
-
-
-  /*news container style*/
-.newscover{
-    display: flex;
-}
-.cont{
-    margin: 2%;
-}
-.newsimg{
-    width: 100px;
-    height: 95px;
-}
-.text-container{
-    margin: 2px;
 }
 
-  @media only screen and (max-width: 600px) {
+/*for modify settings about width like pc,android,tab flexible website*/
+@media only screen and (max-width: 600px) {
     /* Your styles here */
     .wrapper{
         width: 90%;
         height: 450px;
 
     }
+    .newscover{
+        width: 99.9%;
+    }
         
 
     
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
