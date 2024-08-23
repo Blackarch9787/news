@@ -187,19 +187,25 @@
                     console.log(`Subject: ${data.Subject}`);
                     console.log(`Content: ${data.Content}`);
                     //create artical
-                    let table=document.querySelector("table");
-                    let row=table.insertRow();
-                    let cell1=row.insertCell();
-                    let cell2=row.insertCell();
-                    cell1.innerHTML=datetime;
-                    cell2.innerHTML=data.Title;
-                    cell2.innerHTML=data.Subject;
-                    cell2.innerHTML=data.Content;
+                   // Create a new article element using innerHTML
+      const articleHTML = `
+        <article>
+          <h3>${data.Title}</h3>
+          <h5>${data.Subject}</h5>
+          <p>${data.Content}</p>
+        </article>
+      `;
+
+      // Append the article to the section
+      section.innerHTML += articleHTML;
+    });
+  
+                   
 
                    
                     
                 
-                });
+                
             }else {
             console.log("No data available");
             }
