@@ -90,6 +90,10 @@
     <main id="main">
         <section id="top-news">
             <h2>News</h2>
+            <table class="table">
+
+            </table>
+            
             <!-- News articles will be dynamically added here -->
         </section>
    
@@ -183,22 +187,16 @@
                     console.log(`Subject: ${data.Subject}`);
                     console.log(`Content: ${data.Content}`);
                     //create artical
-                    const article = document.createElement('article');
-                    article.classList.add("artical");
-                    article.innerHTML = `
-                    <div class="newscover">
-                    <div class="cont">
-                        <small class="newsdate">${data.Datetime}</small>
-                        <a href="${data.ImgUrl}"> <img src="${data.ImgUrl}" alt="." class="newsimg"> </a>
-                    </div>
-                    <div class="text-container">
-                        <h3 class="newstitle">${data.Title}</h3>
-                        <p class="newssubject">${data.Subject}</p>
-                        <p class="newscontent">${data.Content}</p>
-                    </div>
-                    </div>
-                    
-                   `;
+                    let table=document.querySelector("table");
+                    let row=table.insertRow();
+                    let cell1=row.insertCell();
+                    let cell2=row.insertCell();
+                    cell1.innerHTML=datetime;
+                    cell2.innerHTML=data.Title;
+                    cell3.innerHTML=data.Subject;
+                    cell4.innerHTML=data.Content;
+
+                   
                     //document.body.
                     section.appendChild(article);
                 
